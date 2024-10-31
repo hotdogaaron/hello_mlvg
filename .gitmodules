@@ -1,0 +1,6 @@
+[submodule "madronalib"]
+	path = madronalib
+	url = https://github.com/madronalabs/madronalib
+[submodule "mlvg"]
+	path = mlvg
+	url = https://github.com/madronalabs/mlvg
