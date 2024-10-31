@@ -32,13 +32,14 @@ project(HelloMadrona VERSION 0.1.0 LANGUAGES CXX)
 # Target configuration
 #--------------------------------------------------------------------
 set(target helloMadrona)
+set(ext_libs "${CMAKE_SOURCE_DIR}/../ext_libs")
 
 add_executable(${target} helloMadrona.cpp helloMadrona.h
                 helloMadronaView.cpp helloMadronaView.h)
 
 target_compile_definitions(${target} PRIVATE ML_INCLUDE_SDL=1)
-target_include_directories(${target} PRIVATE "/usr/local/include")
-target_link_directories(${target} PRIVATE "/usr/local/lib")
+target_include_directories(${target} PRIVATE "${ext_libs}/include")
+target_link_directories(${target} PRIVATE "${ext_libs}/lib")
 
 # Add SDL
 if(APPLE)
@@ -51,13 +52,13 @@ target_include_directories(${target} PRIVATE ${SDL2_INCLUDE_DIRS})
 
 # add madronalib
 
-target_include_directories(${target} PRIVATE "/usr/local/include/madronalib")
+target_include_directories(${target} PRIVATE "${ext_libs}/include/madronalib")
 if(APPLE)
     target_link_libraries(${target} PRIVATE "libmadrona-debug.a")
 endif()
 
 #add mlvg library
-target_include_directories(${target} PRIVATE "/usr/local/include/mlvg")
+target_include_directories(${target} PRIVATE "${ext_libs}/include/mlvg")
 if(APPLE)
     target_link_libraries(${target} PRIVATE "libmlvg-debug.a")
 endif()
