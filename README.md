@@ -45,7 +45,7 @@ Direct download link: https://github.com/libsdl-org/SDL/releases/download/releas
     xcodebuild -project mlvg.xcodeproj -target install
     popd
 
-# Building Sample 1
+## Building Sample 1
 
     mkdir sample_1/build
     cd sample_1/build
